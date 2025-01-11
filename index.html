@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventCo</title>
+  <link rel="icon" href="images/web_icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/auth.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Event<span>Co</span></a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="javascript:void(0);" id="openModalBtn">Register/Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Welcome to EventCo</h1>
+    <p>Your ultimate destination for unforgettable events!</p>
+    <a href="#events" class="cta-button">Explore Events</a>
+  </header>
+
+  <!-- Live Events Section -->
+  <!-- Event Card Section -->
+<div class="centered-card" id="events">
+    <!-- Event Cards Section -->
+<div class="event-cards">
+    <!-- First Event Card -->
+    <div class="container">
+        <div class="event-card">
+          <img src="event1.jpg" alt="Event 1">
+          <div class="event-details">
+            <h2 class="event-title">Event 1: Web Development Workshop</h2>
+            <p class="event-description">Join us for a hands-on workshop on web development.</p>
+            <div class="event-meta">
+              <p><strong>Date:</strong> January 12, 2025</p>
+              <p><strong>Time:</strong> 09:00 AM</p>
+              <p><strong>Location:</strong> ABC Hall, Downtown</p>
+            </div>
+            <div class="countdown" id="countdown1"></div>
+            <button class="register-btn">Register</button>
+          </div>
+        </div>
+      
+        <div class="event-card">
+          <img src="event2.jpg" alt="Event 2">
+          <div class="event-details">
+            <h2 class="event-title">Event 2: AI and Machine Learning Seminar</h2>
+            <p class="event-description">Explore the future of AI and ML with industry experts.</p>
+            <div class="event-meta">
+              <p><strong>Date:</strong> January 13, 2025</p>
+              <p><strong>Time:</strong> 10:00 AM</p>
+              <p><strong>Location:</strong> XYZ Conference Room</p>
+            </div>
+            <div class="countdown" id="countdown2"></div>
+            <button class="register-btn">Register</button>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+  
+  
+
+  <!-- Modal for Login / Signup -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contact us: <a href="mailto:support@eventco.com">support@eventco.com</a></p>
+    <div class="social-links">
+      <a href="#" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" target="_blank" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script/app.js"></script>
+  <script src="script/auth.js"></script>
+
+</body>
+</html>
