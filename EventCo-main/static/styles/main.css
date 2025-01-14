@@ -1,0 +1,360 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.3s ease;  /* Added transition for smooth blur effect */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: lightblue;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+button {
+  background: linear-gradient(90deg, #0099ff, #33ccff);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #33ccff, #0099ff);
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: whitesmoke;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: lightblue;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: lightblue;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    padding: 1rem;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default for mobile */
+  }
+
+  .navbar.show-menu .nav-links {
+    display: flex;
+  }
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: linear-gradient(90deg, #0099ff, #33ccff);
+  padding: 0.8rem 2rem;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 153, 255, 0.3);
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+}
+
+/* Floating Event Card */
+.event-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);  /* Shadow for floating effect */
+  color: black;
+  width: 350px;  /* Increased width of the card */
+  text-align: center;
+  position: relative;  /* Ensures it's placed relative to the viewport */
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px;  /* Added margin for spacing between cards */
+}
+
+/* Hover effect for the floating card */
+.event-card:hover {
+  transform: translateY(-10px);  /* Lift the card on hover */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Center the card vertically on the screen */
+.centered-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* Full screen height */
+  width: 100%; /* Ensure full-width */
+  position: relative;  /* Keeps the layout intact */
+}
+
+/* Event Cards Section */
+.event-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem; /* Added more space between cards */
+  margin-top: 50px; /* Added margin to push the cards down */
+}
+
+/* Image Styling inside the card */
+.event-card img {
+  width: 100%; /* Make image fill the width of the card */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Event Details Styling */
+.event-card .event-details {
+  padding-top: 1rem;
+}
+
+.event-title {
+  font-size: 1.8rem; /* Increased font size for event title */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.event-description {
+  font-size: 1.2rem; /* Increased font size for description */
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.event-meta {
+  font-size: 1rem; /* Increased font size for metadata */
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.event-meta p {
+  margin: 0.5rem 0;
+}
+
+.register-btn {
+  background: linear-gradient(90deg, #0099ff, #33ccff);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #33ccff, #0099ff);
+}
+
+/* Footer */
+footer {
+  background: white;
+  padding: 1.5rem;
+  text-align: center;
+  color: black;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+.social-links a {
+  color: black;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: lightblue;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Auth Container Styles */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-container form input,
+.auth-container form select {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Mobile Responsive Event Cards */
+@media (max-width: 768px) {
+  .event-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .event-meta {
+    font-size: 0.85rem;
+  }
+
+  .event-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+.countdown {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #ff4500;  /* Color for countdown text */
+}

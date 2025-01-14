@@ -1,0 +1,32 @@
+<div class="form-container">
+    <h2>Sign Up</h2>
+    <form action="/signup" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+  
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+  
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone" required>
+  
+      <label for="institutionType">Institution Type:</label>
+      <select id="institutionType" name="institutionType" required>
+        <option value="" disabled selected>Select Institution Type</option>
+        <option value="school">School</option>
+        <option value="college">College</option>
+      </select>
+  
+      <div id="dynamicFields"></div>
+  
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <button id="showLoginBtn">Login</button></p>
+  </div>
+  

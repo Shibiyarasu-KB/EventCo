@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventCo</title>
+  <link rel="stylesheet" href="../static/styles/main.css">
+  <link rel="stylesheet" href="../static/styles/auth.css">
+</head>
+<body>
+  
+    
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Event<span>Co</span></a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a id="openModalBtn">Register/Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header class="hero">
+    <h1>Welcome to EventCo</h1>
+    <p>Your ultimate destination for unforgettable events!</p>
+    <a href="#events" class="cta-button">Explore Events</a>
+  </header>
+
+
+
+  <div class="centered-card" id="events">
+    <div class="event-cards">
+      <!-- First Event Card -->
+      <div class="event-card">
+        <img src="{{ url_for('static', filename='img/live_event.png') }}" alt="Event 1">
+        <div class="event-details">
+          <h2 class="event-title">Event 1: Web Development Workshop</h2>
+          <p class="event-description">Join us for a hands-on workshop on web development.</p>
+          <div class="event-meta">
+            <p><strong>Date:</strong> January 12, 2025</p>
+            <p><strong>Time:</strong> 09:00 AM</p>
+            <p><strong>Location:</strong> ABC Hall, Downtown</p>
+          </div>
+          <div class="countdown" id="countdown1">{{ countdown_1 }}</div>
+          <button class="register-btn">Register</button>
+        </div>
+      </div>
+
+      <!-- Second Event Card -->
+      <div class="event-card">
+        <img src="{{ url_for('static', filename='img/web_icon.png') }}" alt="Event 2">
+        <div class="event-details">
+          <h2 class="event-title">Event 2: AI and Machine Learning Seminar</h2>
+          <p class="event-description">Explore the future of AI and ML with industry experts.</p>
+          <div class="event-meta">
+            <p><strong>Date:</strong> January 15, 2025</p>
+            <p><strong>Time:</strong> 10:00 AM</p>
+            <p><strong>Location:</strong> XYZ Conference Room</p>
+          </div>
+          <div class="countdown" id="countdown2">{{ countdown_2 }}</div>
+          <button class="register-btn">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <div id="modalContent">
+        <div id="loginForm" class="form-container">
+          <h2>Login</h2>
+          <form action="/login" method="POST">
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="email" required>
+            
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" required>
+            
+            <button type="submit">Login</button>
+          </form>
+          <p>Don't have an account? <button id="showSignUpBtn">Sign Up</button></p>
+        </div>
+
+        <div id="signUpForm" class="form-container" style="display: none;">
+          <h2>Sign Up</h2>
+          <form action="/signup" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" name="email" required>
+        
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="password" required>
+        
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+        
+            <label for="institutionType">Institution Type:</label>
+            <select id="institutionType" name="institutionType" required>
+              <option value="" disabled selected>Select Institution Type</option>
+              <option value="school">School</option>
+              <option value="college">College</option>
+            </select>
+        
+            <div id="dynamicFields"></div>
+        
+            <button type="submit">Sign Up</button>
+          </form>
+          <p>Already have an account? <button id="showLoginBtn">Login</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- Footer -->
+   <footer>
+    <p>Contact us: <a href="mailto:support@eventco.com">support@eventco.com</a></p>
+    <div class="social-links">
+      <a href="#" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" target="_blank" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </footer>
+
+
+  <script src="../static/js/app.js"></script>
+  {% if alert_message %}
+    <script type="text/javascript">
+        alert("{{ alert_message }}");
+    </script>
+{% endif %}
+
+</body>
+</html>
